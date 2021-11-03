@@ -1,6 +1,6 @@
 package com.bdlz.StackQueue;
 
-public class Stack {
+public class StackAndQueue {
     Node head;
     Node tail;
     Node top;
@@ -33,6 +33,19 @@ public class Stack {
             temp=temp.next;
         }
 
+    }
+
+    public void queue(int data) {
+        Node newNode=new Node(data);
+        if (head == null) {
+            head = newNode;
+            tail = newNode;
+            top=head;
+        } else {
+            Node tempNode=tail;
+            this.tail=newNode;
+            tempNode.next=tail;
+        }
     }
 
     public void display(){
