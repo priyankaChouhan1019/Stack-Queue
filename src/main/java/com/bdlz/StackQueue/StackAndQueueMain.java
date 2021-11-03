@@ -22,6 +22,9 @@ public class StackAndQueueMain {
             case 4:
                 operation.queueElement();
                 break;
+            case 5:
+                operation.dequeueElement();
+                break;
         }
         scanner.close();
     }
