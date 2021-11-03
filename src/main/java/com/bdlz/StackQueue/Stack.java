@@ -6,18 +6,33 @@ public class Stack {
     Node top;
 
     public Node push(int data) {
-        Node newnode = new Node(data);
+        Node newNode = new Node(data);
 
         if (head == null) {
-            head = newnode;
-            tail = newnode;
+            head = newNode;
+            tail = newNode;
         } else {
             Node tempNode = head;
-            this.head = newnode;
-            newnode.next = tempNode;
+            this.head = newNode;
+            newNode.next = tempNode;
         }
         top=head;
-        return newnode;
+        return newNode;
+    }
+
+    public int peek(){
+        System.out.println("Top element is "+this.top.data);
+        return top.data;
+    }
+
+    public void pop() {
+        Node temp =top;
+        while (temp != null){
+            Node tempNode = this.head;
+            this.head = tempNode.next;
+            temp=temp.next;
+        }
+
     }
 
     public void display(){
